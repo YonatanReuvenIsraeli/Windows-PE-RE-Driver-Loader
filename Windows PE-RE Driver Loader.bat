@@ -2,7 +2,7 @@
 setlocal
 title Windows PE/RE Driver Loader
 echo Program Name: Windows PE/RE Driver Loader
-echo Version: 1.0.0
+echo Version: 1.0.1
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
@@ -45,7 +45,7 @@ goto "SureDriver"
 
 :"DriverLoad"
 echo.
-echo Loading driver file "%FullPath%".
+echo Loading driver file(s) "%FullPath%".
 "%windir%\System32\drvload.exe" "%FullPath%" > nul 2>&1
 if not "%errorlevel%"=="0" goto "Error"
 goto "Another"
