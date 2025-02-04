@@ -1,8 +1,8 @@
 @echo off
-setlocal
 title Windows PE/RE Driver Loader
+setlocal
 echo Program Name: Windows PE/RE Driver Loader
-echo Version: 1.0.2
+echo Version: 1.0.3
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
