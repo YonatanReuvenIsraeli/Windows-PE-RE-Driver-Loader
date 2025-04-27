@@ -2,7 +2,7 @@
 title Windows PE/RE Driver Loader
 setlocal
 echo Program Name: Windows PE/RE Driver Loader
-echo Version: 1.0.3
+echo Version: 1.0.4
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
@@ -32,7 +32,7 @@ goto "SureDriver"
 
 :"NotExist"
 echo "%FullPath%" does not exist! You can try again.
-goto "Start"
+goto "Driver"
 
 :"SureDriver"
 echo.
@@ -48,6 +48,7 @@ echo.
 echo Loading driver file(s) "%FullPath%".
 "%windir%\System32\drvload.exe" "%FullPath%" > nul 2>&1
 if not "%errorlevel%"=="0" goto "Error"
+echo Driver file(s) "%FullPath%" loaded.
 goto "Another"
 
 :"Error"
@@ -55,8 +56,9 @@ echo There has been an error! You can try again.
 goto "Driver"
 
 :"Another"
+echo.
 set Another=
-set /p Another="Driver file(s) "%FullPath%" loaded. Do you want to load another driver(s) (.inf) file(s)? (Yes/No) "
+set /p Another="Do you want to load another driver(s) (.inf) file(s)? (Yes/No) "
 if /i "%Another%"=="Yes" goto "Driver"
 if /i "%Another%"=="No" goto "Done"
 echo Invalid syntax!
