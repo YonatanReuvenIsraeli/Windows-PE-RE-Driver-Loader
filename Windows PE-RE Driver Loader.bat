@@ -2,7 +2,7 @@
 title Windows PE/RE Driver Loader
 setlocal
 echo Program Name: Windows PE/RE Driver Loader
-echo Version: 1.0.4
+echo Version: 1.0.5
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
@@ -19,7 +19,7 @@ goto "Done"
 
 :"Start"
 echo.
-echo lf you add a driver using this batch file, it will become the default driver for this device. If an updated driver is added in Windows Setup, the driver added through this batch file will be used. Press any key to continue.
+echo If you add a driver using this batch file, it will become the default driver for this device. If an updated driver is added in Windows Setup, the driver added through this batch file will be used. Press any key to continue.
 pause > nul 2>&1
 goto "Driver"
 
